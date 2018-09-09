@@ -1,10 +1,24 @@
 
-% building spectrograms
+%% Discrete Fourier Transform
 
- s1 = get_fft_spectrogram(frames, 128); 
- s2 = get_fft_spectrogram(frames, 256);
- s3 = get_fft_spectrogram(frames, 512);
- s4 = get_fft_spectrogram(frames, 1024);
- s5 = get_fft_spectrogram(frames, 2048);
- s6 = get_fft_spectrogram(frames, 8192);
- s7 = get_fft_spectrogram(frames, 32768);
+% get a single frame (you can choose one...)
+frame = frames(:,100);
+
+% plot audio signal (window frame)
+subplot(2,1,1); 
+plot(frame);
+ylabel('Amplitude');
+xlabel('Time');
+
+% compute DFT (slow = dummy for illustration)
+ft= slowFT(frame', 1024);
+
+% plot audio signal (window frame)
+subplot(2,1,2); 
+plot(abs(ft));
+ylabel('Magnitude');
+xlabel('Freq'); % the output from MATLAB is one period from 0 to pi
+
+
+
+
