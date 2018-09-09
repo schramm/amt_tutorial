@@ -1,3 +1,8 @@
+addpath('../utils');
+addpath('../utils/CQT');
+addpath('dummy');
+
+
 
 % input wave file name
 filename = 'scale_flute.wav';

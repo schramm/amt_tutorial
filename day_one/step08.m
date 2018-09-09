@@ -1,12 +1,10 @@
 
 minFreq = 100;
-maxFreq = 8000;
+maxFreq = 4000;
 bins = 12;
 fs = 44100;
 
-% L = size(audio_frames,2); % num audio frames 
-% s = zeros([N,L]);
-% cplx = zeros([N,L]);
+%% this is gona take a while...
 s=[];
 for i=1:size(frames,2)
       frame = frames(:,i);      
