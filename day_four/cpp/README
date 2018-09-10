@@ -1,6 +1,25 @@
 
+Dependences: 
+
+#Eigen Matrix Library
 Please download the Eigen Matrix Library headers.
 http://eigen.tuxfamily.org/index.php
-
 Mirror: http://inf.ufrgs.br/~rschramm/projects/music/tutorials/eigen3.3.4.zip
 
+# libsndfile
+//sudo apt install libsndfile1
+//sudo apt install libsndfile-dev
+// find /usr/ -name libsndfile*
+////  /usr/lib/x86_64-linux-gnu/libsndfile.so.1
+
+
+# fftw3
+//sudo apt install fftw3
+//sudo apt install fftw-dev
+
+
+%% preparation
+% It is need to have cqt kernels inside the data directory.
+% The kernels are generated with matlab/octave scripts 
+% to generate: sparseKernel.m
+% to save: saveCQTKernel.m
