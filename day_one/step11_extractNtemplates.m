@@ -1,5 +1,5 @@
     
-filename_piano = 'scale_piano.wav';
+filename_piano = '../audio_samples/scale_piano.wav';
 [intCQT_piano, hop_size_samples] = computeCQT(filename_piano);
 [tpl_piano, notes_piano] = step10_extractTemplates(intCQT_piano); % using median
     

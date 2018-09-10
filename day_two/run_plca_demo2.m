@@ -4,21 +4,21 @@ k = 2;
 
 if 1
     
-    filename_flute = 'audio_samples/scale_flute.wav';
+    filename_flute = '../audio_samples/scale_flute.wav';
     [intCQT_flute, hop_size_samples] = computeCQT(filename_flute);
-    [tpl_flute, notes_flute] = extractTemplates(intCQT_flute); % using median
+    [tpl_flute, notes_flute] = step10_extractTemplates(intCQT_flute); % using median
     
-    filename_violin = 'audio_samples/scale_violin.wav';
+    filename_violin = '../audio_samples/scale_violin.wav';
     [intCQT_violin, hop_size_samples] = computeCQT(filename_violin);
-    [tpl_violin, notes_violin] = extractTemplates(intCQT_violin); % using median
+    [tpl_violin, notes_violin] = step10_extractTemplates(intCQT_violin); % using median
     
-    filename_guitar = 'audio_samples/scale_guitar.wav';
+    filename_guitar = '../audio_samples/scale_guitar.wav';
     [intCQT_guitar, hop_size_samples] = computeCQT(filename_guitar);
-    [tpl_guitar, notes_guitar] = extractTemplates(intCQT_guitar); % using median
+    [tpl_guitar, notes_guitar] = step10_extractTemplates(intCQT_guitar); % using median
     
-    filename_piano = 'audio_samples/scale_piano.wav';
+    filename_piano = '../audio_samples/scale_piano.wav';
     [intCQT_piano, hop_size_samples] = computeCQT(filename_piano);
-    [tpl_piano, notes_piano] = extractTemplates(intCQT_piano); % using median
+    [tpl_piano, notes_piano] = step10_extractTemplates(intCQT_piano); % using median
     
 end
 
@@ -40,7 +40,7 @@ ww2(:,:,1,3*k+1:4*k) = tpl_guitar2;
 
 close all;
 
-filename_mix01 = 'audio_samples/mix02.wav';
+filename_mix01 = '../audio_samples/mix02.wav';
 [intCQT_mix01, hop_size_samples] = computeCQT(filename_mix01);
 
 [ww,pp,rr,xa] = plca3d(ww2, intCQT_mix01, 26, k*4, 30);

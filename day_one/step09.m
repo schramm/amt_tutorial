@@ -13,8 +13,11 @@ for i=1:size(frames,2)
     cq= fft(frame,size(sparKernel,1)) * sparKernel;
     s(:,i) = cq';
 end
+%s = get_cqt_spectrogram(frames, sparKernel)
 
-%% Second option (better quality)
+
+
+%% Second option (better quality and faster)
 %Christian Schörkhuber, Anssi Klapuri et all
 % A Matlab Toolbox for Efficient Perfect Reconstruction Time-Frequency Transforms with Log-Frequency Resolution
 % https://www.cs.tut.fi/sgn/arg/CQT/

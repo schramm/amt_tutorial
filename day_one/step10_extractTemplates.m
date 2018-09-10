@@ -1,7 +1,12 @@
-function [templates, notes] = step10_extractTemplates(intCQT)
+function [templates, notes] = step10_extractTemplates(intCQT, hop_size)
 
 %% the CQT output has one frame at each 62 samples
-frameStep = 62; % int samples 
+if nargin==2
+    frameStep = hop_size; % int samples   
+else
+    frameStep = 62; % int samples   (if using computeCQT)
+end
+
 % synthetic data (wav file) has two pitches per second (quarter notes and 120 BPM)
 fs = 44100;
 noteDurationSamples = fs/2; %half second

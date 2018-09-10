@@ -2,7 +2,8 @@ function [intCQT, hop_size_samples] = computeCQT(filename)
 % Settings for computing CQT for music signals (by E. Benetos)
 
 
-bins = 12;
+%bins = 12;
+bins = 60;
 
 % Load .wav file
 [x, fs ] = audioread(filename);

@@ -103,12 +103,10 @@ for it = 1:iter
     zz = permute(PPZZ, [3 2 1]);  % marginalization (it is already done over \omega)
     % pitch activation
     pp = permute(squeeze(sum(PPZZ,3)), [2 1]);    %% marginalization
+        
+    pp = medfilt1(pp, 20, [], 2);    
     
-    
-    pp = medfilt1(pp, 30, [], 2);
-    
-    
-    zz = zz.^1.2; % sparsity
+    zz = zz.^1.05; % sparsity
       
     %% normalization
     z_resh = reshape(zz,[R K*N]);
@@ -122,7 +120,9 @@ for it = 1:iter
     %pp = pp.^1.1; % sparsity
     
     
-    imagesc(pp); axis xy; title(it);
+    subplot(1,3,1); imagesc(x); axis xy;
+    subplot(1,3,2); imagesc(xa); axis xy;
+    subplot(1,3,3); imagesc(pp); axis xy; title(it);
     shg; pause(.1);
 end
 
