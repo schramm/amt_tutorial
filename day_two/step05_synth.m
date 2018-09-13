@@ -38,4 +38,8 @@ pv = audioplayer(synth_violin, 44100);
 synth_all = (synth_piano+synth_flute+synth_guitar+synth_violin)/4;
 pall = audioplayer(synth_all, 44100);
 
-
+%play(pp);
+%play(pf);
+%play(pg);
+%play(pv);
+%play(pall);

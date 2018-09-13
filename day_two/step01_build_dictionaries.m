@@ -1,3 +1,5 @@
+addpath('../utils');
+addpath('../day_one');
 
 %% number of templates per note
 k = 2;
@@ -11,6 +13,7 @@ filename_flute = '../audio_samples/scale_flute.wav';
 %%
 cqt_kernel = sparseKernel(27, fs/3, 60, fs);
 %%
+disp('Processing flute wav.');
 frames = get_audio_frames(x, win_size, hop_size);
 %[wf] = windowed_audio_frames(frames);
 %[intCQT_flute, hop_size_samples] = computeCQT(filename_flute);
@@ -20,6 +23,7 @@ intCQT_flute = get_cqt_spectrogram(frames, cqt_kernel);
 
 filename_violin = '../audio_samples/scale_violin.wav';
 %[intCQT_violin, hop_size_samples] = computeCQT(filename_violin);
+disp('Processing violin wav.');
 [x,fs] = audioread(filename_violin);
 frames = get_audio_frames(x, win_size, hop_size);
 %[wf] = windowed_audio_frames(frames);
@@ -29,6 +33,7 @@ intCQT_violin = get_cqt_spectrogram(frames, cqt_kernel);
 
 filename_guitar = '../audio_samples/scale_guitar.wav';
 %[intCQT_guitar, hop_size_samples] = computeCQT(filename_guitar);
+disp('Processing guitar wav.');
 [x,fs] = audioread(filename_guitar);
 frames = get_audio_frames(x, win_size, hop_size);
 %[wf] = windowed_audio_frames(frames);
@@ -38,6 +43,7 @@ intCQT_guitar = get_cqt_spectrogram(frames, cqt_kernel);
 
 filename_piano = '../audio_samples/scale_piano.wav';
 %[intCQT_piano, hop_size_samples] = computeCQT(filename_piano);
+disp('Processing piano wav.');
 [x,fs] = audioread(filename_piano);
 frames = get_audio_frames(x, win_size, hop_size);
 %[wf] = windowed_audio_frames(frames);
@@ -45,10 +51,13 @@ frames = get_audio_frames(x, win_size, hop_size);
 intCQT_piano = get_cqt_spectrogram(frames, cqt_kernel);
 [tpl_piano, notes_piano] = step10_extractTemplates(abs(intCQT_piano),hop_size); % using median
 
-
+disp('Extracting templates for piano.');
 [tpl_piano2, act_piano2] = extractKtemplatesPerNote(notes_piano,k);
+disp('Extracting templates for flute.');
 [tpl_flute2, act_flute2] = extractKtemplatesPerNote(notes_flute,k);
+disp('Extracting templates for guitar.');
 [tpl_guitar2, act_guitar2] = extractKtemplatesPerNote(notes_guitar,k);
+disp('Extracting templates for violin.');
 [tpl_violin2, act_violin2] = extractKtemplatesPerNote(notes_violin,k);
 
 
