@@ -1,4 +1,5 @@
 addpath('../utils');
+addpath('../utils/CQT');
 addpath('../day_one');
 
 %% number of templates per note

@@ -23,7 +23,7 @@ function [ww,pp,zz,xa] = plca3d(ww, x, K, R, iter)
 % (https://code.soundsoftware.ac.uk/projects/amt_plca_5d)
 % Modifications by Rodrigo Schramm 2017/2018
 
-rng(666);
+%rng(666);
 
 pp5=[];
 
